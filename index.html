@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LunaAI Maps - Explore the World with AI</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #0f0f0f;
       color: #ffffff;
       text-align: center;
-      padding: 50px;
+      padding: 20px;
     }
     h1 {
       font-size: 48px;
@@ -20,27 +21,43 @@
       font-size: 24px;
       color: #cccccc;
     }
-    .map-placeholder {
-      margin-top: 30px;
+    #map {
+      margin: 20px auto;
       width: 80%;
-      height: 400px;
-      background-color: #333;
-      border: 2px dashed #666;
-      display: inline-block;
-      line-height: 400px;
-      color: #999;
-      font-size: 20px;
+      height: 500px;
+      border: 3px solid #444;
+      border-radius: 10px;
+    }
+    .logo {
+      width: 120px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>🌍 LunaAI Maps</h1>
-  <p>Welcome to the AI-powered global navigation project!</p>
 
-  <div class="map-placeholder">
-    [ Bản đồ sẽ hiển thị ở đây - Đang cập nhật... ]
-  </div>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/AI_logo_placeholder.png" alt="LunaAI Logo" class="logo">
+  
+  <h1>🌍 LunaAI Maps</h1>
+  <p>Explore the world with AI-powered maps!</p>
+
+  <div id="map">Loading map...</div>
 
   <p>Developed by LunaAI & Khoa Huynh - 2025</p>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('map').setView([32.9126, -96.6389], 4); // Vị trí bắt đầu tại Garland, Texas
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    L.marker([32.9126, -96.6389]).addTo(map)
+      .bindPopup('Garland, Texas (Home of LunaAI)')
+      .openPopup();
+  </script>
+
 </body>
 </html>
+
