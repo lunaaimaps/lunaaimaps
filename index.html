@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,14 +30,14 @@
       border-radius: 10px;
     }
     .logo {
-      width: 120px;
+      width: 100px;
       margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
 
-  <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/AI_logo_placeholder.png" alt="LunaAI Logo" class="logo">
+  <img src="logo.svg" alt="LunaAI Logo" class="logo">
   
   <h1>🌍 LunaAI Maps</h1>
   <p>Explore the world with AI-powered maps!</p>
@@ -47,7 +48,7 @@
 
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script>
-    var map = L.map('map').setView([32.9126, -96.6389], 4); // Vị trí bắt đầu tại Garland, Texas
+    var map = L.map('map').setView([32.9126, -96.6389], 4); // Garland, Texas
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors'
@@ -60,4 +61,3 @@
 
 </body>
 </html>
-
